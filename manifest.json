@@ -1,17 +1,12 @@
 {
   "manifest_version": 3,
   "name": "Adachi Yoyaku Assist",
-  "version": "1.0.0",
-  "permissions": ["scripting", "tabs"],
-  "host_permissions": [
-    "https://yoyakusystem.city.adachi.tokyo.jp/web/rsvWTransInstSrchVacantAction.do",
-    "https://yoyakusystem.city.adachi.tokyo.jp/web/rsvWTransInstSrchPpsdAction.do",
-    "https://yoyakusystem.city.adachi.tokyo.jp/web/rsvWTransInstSrchBuildAction.do",
-    "https://yoyakusystem.city.adachi.tokyo.jp/web/rsvWInstSrchVacantWAllAction.do",
-    "https://yoyakusystem.city.adachi.tokyo.jp/web/rsvWInstRsvSetStimeWAllAction.do",
-    "https://yoyakusystem.city.adachi.tokyo.jp/web/rsvWInstRsvSetEtimeWAllAction.do",
-    "https://yoyakusystem.city.adachi.tokyo.jp/web/rsvWInstSrchVacantTimeSelectionWAllAction.do",
-    "https://yoyakusystem.city.adachi.tokyo.jp/web/rsvWInstTempRsvApplyAction.do"
-  ],
-  "background": { "service_worker": "background.js" }
+  "version": "2.0.0",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://k5.p-kashikan.jp/adachi-ku/index.php*"],
+      "js": ["script.js"]
+    }
+  ]
 }
